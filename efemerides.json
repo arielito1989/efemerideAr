@@ -1,0 +1,5 @@
+[
+    { "fecha": "1978-06-25", "descripcion": "Argentina es campeona del mundo en 1978.", "imagen": "images/arg1.jpeg" },
+    { "fecha": "1986-06-29", "descripcion": "Argentina es campeona del mundo en 1986.", "imagen": "images/arg2.jpeg" },
+    { "fecha": "2022-12-18", "descripcion": "Argentina es campeona del mundo en 2022.", "imagen": "images/arg3.jpeg" }
+]
