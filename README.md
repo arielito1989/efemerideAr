@@ -44,13 +44,13 @@ Aquí se documentan los próximos pasos para mejorar y evolucionar el proyecto.
 
 Una vez completada la estructura y funcionalidad base, nos enfocaremos en refinar la experiencia de usuario con mejoras visuales y de interacción.
 
-- [ ] **1. Animaciones y Microinteracciones Sutiles:**
-    - [ ] Añadir transiciones suaves para la aparición del contenido al hacer clic en el botón.
-    - [ ] Implementar efectos `hover` en los elementos de la lista "Logros Destacados" para mejorar la interactividad.
+- [x] **1. Animaciones y Microinteracciones Sutiles:**
+    - [x] Añadir transiciones suaves para la aparición del contenido al hacer clic en el botón.
+    - [x] Implementar efectos `hover` en los elementos de la lista "Logros Destacados" para mejorar la interactividad.
 
-- [ ] **2. Jerarquía Visual y Tipografía:**
-    - [ ] Ajustar el estilo del título "Logros Destacados" para darle más importancia visual.
-    - [ ] Integrar una combinación de fuentes desde Google Fonts para una estética más profesional.
+- [x] **2. Jerarquía Visual y Tipografía:**
+    - [x] Ajustar el estilo del título "Logros Destacados" para darle más importancia visual.
+    - [x] Integrar una combinación de fuentes desde Google Fonts para una estética más profesional.
 
-- [ ] **3. Pulido de Interfaz:**
-    - [ ] Enriquecer el mensaje de "estado vacío" (cuando no hay efeméride) con un icono o un diseño más elaborado.
+- [x] **3. Pulido de Interfaz:**
+    - [x] Enriquecer el mensaje de "estado vacío" (cuando no hay efeméride) con un icono o un diseño más elaborado.

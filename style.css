@@ -2,6 +2,7 @@
 :root {
     --bg-color: #1a1a1d;
     --card-bg-color: #2c2c34;
+    --card-bg-hover: #3a3a44;
     --text-color: #f0f0f0;
     --primary-color: #4e8cff;
     --text-muted-color: #a0a0a0;
@@ -14,10 +15,14 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
     padding: 2rem;
+}
+
+h1, h2, h3, .efemeride-descripcion {
+    font-family: 'Lora', serif;
 }
 
 /* --- Background Collage --- */
@@ -33,13 +38,13 @@ body {
 
 #floating-collage-container img {
     position: absolute;
-    opacity: 0.2; /* Increased visibility */
+    opacity: 0.2;
     border-radius: 12px;
-    width: 150px; /* Uniform size for consistency */
+    width: 150px;
     height: auto;
 }
 
-/* --- Main Layout --- */
+/* --- Main Layout & Animations --- */
 .main-container {
     max-width: 900px;
     margin: 0 auto;
@@ -50,15 +55,32 @@ body {
     margin-bottom: 3rem;
 }
 
+#show-main-btn {
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+#show-main-btn.fade-out {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
 #content-area {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     align-items: center;
     width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-#content-area.hidden, #show-main-btn.hidden, #himno-audio.hidden {
+#content-area.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#himno-audio.hidden {
     display: none;
 }
 
@@ -75,7 +97,7 @@ body {
 }
 
 .efemeride-figure {
-    flex: 0 0 40%; /* Image takes 40% of width */
+    flex: 0 0 40%;
 }
 
 .efemeride-image {
@@ -86,7 +108,7 @@ body {
 }
 
 .efemeride-info {
-    flex: 1; /* Text takes remaining space */
+    flex: 1;
     padding: 2rem;
     text-align: left;
     display: flex;
@@ -109,11 +131,23 @@ body {
 .no-efemeride-mensaje {
     background-color: var(--card-bg-color);
     border-radius: 16px;
-    padding: 2rem;
+    padding: 3rem 2rem;
     font-size: 1.5rem;
     font-weight: 500;
     width: 100%;
     max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    color: var(--text-muted-color);
+}
+
+.empty-state-icon {
+    width: 48px;
+    height: 48px;
+    stroke-width: 1.5;
 }
 
 /* --- Logros Aside --- */
@@ -127,16 +161,25 @@ body {
 }
 
 #logros-container h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-size: 1.8rem; /* Increased size */
+    color: var(--primary-color); /* Use accent color */
+    margin-bottom: 1.5rem; /* More space */
     text-align: center;
+    letter-spacing: 0.5px; /* Subtle spacing */
 }
 
 .logro-item {
     display: flex;
     justify-content: space-between;
-    padding: 0.75rem 0;
+    padding: 0.75rem;
+    border-radius: 8px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.logro-item:hover {
+    background-color: var(--card-bg-hover);
+    transform: translateY(-2px);
 }
 
 .logro-item:last-child {
@@ -170,7 +213,7 @@ body {
     }
 
     .efemeride-figure {
-        flex-basis: 200px; /* Fixed height for image on mobile */
+        flex-basis: 200px;
     }
 
     .efemeride-info {
